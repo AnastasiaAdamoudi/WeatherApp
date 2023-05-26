@@ -18,11 +18,23 @@ export default function SearchBar({ setCityName, cityName }: any) {
 
   }
 
+  function handleForecast(event: React.ChangeEvent<HTMLInputElement>) {
+    if (event.target.checked) {
+      console.log("Forecast checked");
+    }
+    else {
+      console.log("Forecast unchecked");
+    }
+  }
+
   return (
     <div className="SearchBar">
         <form onSubmit={handleSearch} >
             <input value={cityNameText} type="text" placeholder="Search" onChange={handleInputChange} />
-            <button type="submit">Search</button>
+            <button type="submit">Enter city name</button>
+            <br></br>
+            <label htmlFor="forecast">Forecast</label>
+            <input type="checkbox" name="forecast" id="forecast" onChange={handleForecast} />
         </form>
     </div>
   );
