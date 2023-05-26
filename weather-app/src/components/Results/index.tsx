@@ -28,9 +28,9 @@ export default function Results({ cityName }: any) {
       console.log(data.wind.speed);
 
        let thisWeather: Weather = {
-         id: data.id,
-         main: data.weather[0].main,
-         description: data.weather[0].description,
+        id: data.id,
+        main: data.weather[0].main,
+        description: data.weather[0].description,
         icon: data.weather[0].icon,
         date: new Date(data.dt * 1000),
         temp: data.main.temp,
