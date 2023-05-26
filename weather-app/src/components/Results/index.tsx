@@ -82,7 +82,7 @@ export default function Results({ cityName, isForecast }: any) {
 
   return <div className="Results">
     <h1>{cityName}</h1>
-  {isForecast ? <div>
+  {isForecast ? <div className="Forecast">
 
     {weatherForecast?.map((weather: Weather) => {
         return (
@@ -96,13 +96,15 @@ export default function Results({ cityName, isForecast }: any) {
                 <h4>Max temperature: {weather.temp_max}°C</h4>
                 <h4>Wind speed: {weather.wind_speed} km/h</h4>
                 <h4>Wind direction: {weather.wind_deg}°</h4>
+                <br />
+                <hr />
             </div>
         );
     })}
 
   </div> : 
   
-    <div>
+    <div className="CurrentWeather">
         <h2>{weatherNow?.currentDate.toLocaleDateString()}</h2> 
         <img src={`http://openweathermap.org/img/w/${weatherNow?.icon}.png`} alt="weather icon" />
         <h2>{weatherNow?.main}</h2>

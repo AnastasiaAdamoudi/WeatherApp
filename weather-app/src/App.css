@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+.Results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Results h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Results img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.Results h2 {
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.Results h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.Results h4:first-child {
+  margin-top: 10px;
+}
+
+/* Additional styles for specific elements */
+
+.Results .temperature {
+  font-weight: bold;
+}
+
+.Results .wind {
+  margin-top: 20px;
+}
+
+.Results .wind::before {
+  content: "🌬️ ";
+  display: inline;
+}
