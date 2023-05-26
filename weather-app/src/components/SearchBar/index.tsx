@@ -1,30 +1,20 @@
 import { useState } from "react";
 
-export default function SearchBar({ setCityName, cityName }: any) {
+export default function SearchBar({ setCityName, cityName, setisForecast, isForecast }: any) {
     const [cityNameText, setCityNameText] = useState<string>("");
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
     setCityNameText(event.target.value);
-    
-
-    console.log(cityName);
   }
 
   function handleSearch(event: React.FormEvent) {
     event.preventDefault(); 
-    
     setCityName(cityNameText);
     setCityNameText("");
-
   }
 
   function handleForecast(event: React.ChangeEvent<HTMLInputElement>) {
-    if (event.target.checked) {
-      console.log("Forecast checked");
-    }
-    else {
-      console.log("Forecast unchecked");
-    }
+    setisForecast(event.target.checked);
   }
 
   return (
