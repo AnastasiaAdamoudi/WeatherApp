@@ -1,21 +1,29 @@
 import { useState } from "react";
 
 export default function SearchBar({ setCityName, cityName }: any) {
-  // const [cityName, setCityName] = useState<string>("");
+    const [cityNameText, setCityNameText] = useState<string>("");
 
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setCityName(event.target.value);
+    setCityNameText(event.target.value);
+    
+
     console.log(cityName);
   }
 
-  function handleSearch() {
-    // add functionality to search for city weather on click
+  function handleSearch(event: React.FormEvent) {
+    event.preventDefault(); 
+    
+    setCityName(cityNameText);
+    setCityNameText("");
+
   }
 
   return (
     <div className="SearchBar">
-      <input type="text" placeholder="Search" onChange={handleInputChange} />
-      <button type="submit">Search</button>
+        <form onSubmit={handleSearch} >
+            <input value={cityNameText} type="text" placeholder="Search" onChange={handleInputChange} />
+            <button type="submit">Search</button>
+        </form>
     </div>
   );
 }
